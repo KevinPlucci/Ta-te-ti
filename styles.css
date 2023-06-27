@@ -1,0 +1,159 @@
+body {
+  background-color: #f7f7f7;
+}
+
+h1 {
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#scoreboard {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.player-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.player-name span {
+  display: inline-block;
+  position: relative;
+}
+
+.player-name span:before,
+.player-name span:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.player-name span:before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player-name span:after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.player-name span:hover:before,
+.player-name span:hover:after {
+  width: 50%;
+}
+
+#board {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+#board td {
+  width: 33.33%;
+  height: 100px;
+  font-size: 48px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#board td:hover {
+  background-color: #e2e2e2;
+}
+
+.player1-icon {
+  color: #000;
+}
+
+.player2-icon {
+  color: #000;
+}
+
+#resetBtn {
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+#resetBtn:hover {
+  background-color: #222;
+}
+
+@keyframes cell-highlight {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #ffff99;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+.highlight-cell {
+  animation: cell-highlight 1s ease-in-out;
+}
+
+#resultAlert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  z-index: 1000;
+}
+
+#resultMessage {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.alert {
+  border-radius: 10px;
+  animation: alert-fade 0.5s ease;
+}
+
+@keyframes alert-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tateti-animation {
+  animation: tateti-flames 1s infinite alternate;
+}
+
+@keyframes tateti-flames {
+  0% {
+    text-shadow: 0 0 10px #ff6d00, 0 0 20px #ff6d00, 0 0 30px #ff6d00,
+      0 0 40px #ff6d00, 0 0 50px #ff6d00, 0 0 60px #ff6d00, 0 0 70px #ff6d00,
+      0 0 80px #ff6d00;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff6d00, 0 0 20px #ff6d00, 0 0 30px #ff6d00,
+      0 0 40px #ff6d00, 0 0 50px #ff6d00, 0 0 60px #ff6d00, 0 0 70px #ff6d00,
+      0 0 80px #ff6d00, 0 0 90px #ff6d00, 0 0 100px #ff6d00;
+  }
+}
